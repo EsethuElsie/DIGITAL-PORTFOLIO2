@@ -1,0 +1,492 @@
+# DIGITAL-PORTFOLIO2
+ESETHU MBIZWENI-PRP370
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Readiness Digital Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            border-bottom: 3px solid #667eea;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .subsection {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .subsection h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .star-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .star-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .star-item p {
+            margin-bottom: 8px;
+        }
+
+        .evidence-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .evidence-list li {
+            padding: 12px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .intro-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #e9d5ff 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            border: 3px dashed #667eea;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder::before {
+            content: '📷';
+            font-size: 4em;
+            opacity: 0.3;
+        }
+
+        .image-placeholder span {
+            position: absolute;
+            bottom: 20px;
+            background: rgba(255,255,255,0.9);
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .conclusion-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .conclusion-section h2 {
+            color: white;
+            border-bottom: 3px solid white;
+        }
+
+        .conclusion-section p {
+            font-size: 1.15em;
+            line-height: 1.9;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+
+            .image-placeholder {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Work Readiness Digital Portfolio</h1>
+            <p>ESETHU ELSIE MBIZWENI | 222458968 | PRP370S</p>
+            <p>CPUT - Diploma in Information and Communication Technology</p>
+            <p>Masebo Networks Hybrid Internship</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#business-comm">Business Communication</a></li>
+                <li><a href="#interview">Interview Skills</a></li>
+                <li><a href="#mock-interview">Mock Interview</a></li>
+                <li><a href="#networking">Professional Networking</a></li>
+                <li><a href="#etiquette">Workplace Etiquette</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="intro" class="intro-section">
+                <h2>Introduction</h2>
+                <p>Welcome to my Work Readiness Digital Portfolio. This portfolio showcases my learning journey and professional development during my hybrid internship at Masebo Networks. Through structured reflection using the STAR technique, I demonstrate my growth across key professional competencies including business communication, interview skills, networking, and workplace etiquette. Each section contains evidence of my experiences and insights gained that have prepared me for success in the ICT industry.</p>
+            </section>
+
+            <!-- BUSINESS COMMUNICATION -->
+            <section id="business-comm">
+                <h2>💼 Business Communication</h2>
+                
+                <div class="subsection">
+                    <h3>Evidence</h3>
+                    <p>During my hybrid internship at Masebo Networks, I was responsible for managing internal and external communication through digital platforms such as Microsoft Teams and email. My role included writing professional emails, compiling weekly progress reports, and assisting where I can. Through these responsibilities, I improved my ability to convey technical information clearly and maintain professionalism across different communication mediums.</p>
+                    
+                    <div class="image-placeholder">
+                        <img src="<img width="1891" height="963" alt="business-communication jpg" src="https://github.com/user-attachments/assets/6bd70bcf-f42a-464c-8a6a-67e7f9e70dfd" />
+" alt="Business Communication Evidence">
+                        <span>📧 Replace with: Email samples, reports, or Teams screenshot</span>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Reflection: STAR Technique</h3>
+                    
+                    <div class="star-item">
+                        <strong>Situation:</strong>
+                        <p>When I first joined Masebo Networks I was given a task to create a survey for companies that might be interested in doing WIL internships.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Task:</strong>
+                        <p>My task was to find out if there are companies interested on WIL and finding out their struggles with not implementing or even feedback from the ones that already did. It was also my responsibility to make sure that my daily reports reflected accurate project updates so that my supervisor and the rest of the team could make informed decisions.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Action:</strong>
+                        <p>To address this, I introduced a survey internally first before putting in on LinkedIn and any available platforms. By maintaining open communication lines, I ensured that information flowed efficiently.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Result:</strong>
+                        <p>The implementation of these strategies significantly reduced miscommunication and improved overall productivity. My supervisor commended my initiative and attention to detail in streamlining project updates. Through this experience, I learned that effective business communication is about being proactive, organized, and clear — qualities that I will continue to apply in future professional settings.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTERVIEW SKILLS -->
+            <section id="interview">
+                <h2>💬 Interview Skills</h2>
+                
+                <div class="subsection">
+                    <h3>Evidence</h3>
+                    <p>Before being accepted as an intern at Masebo Networks, I participated in an online interview via Microsoft Teams. The interview focused on my technical skills, problem-solving abilities, and adaptability to hybrid work environments. I practiced answering behavioral questions using the STAR method and prepared by researching the company's values and recent projects.</p>
+                    
+                    <div class="image-placeholder">
+                        <img src="<img width="1904" height="978" alt="interview-skills jpg" src="https://github.com/user-attachments/assets/51788922-54db-40ea-8608-772568928017" />
+" alt="Interview Skills Evidence">
+                        <span>📋 Replace with: Resume, cover letter, or interview prep notes</span>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Reflection: STAR Technique</h3>
+                    
+                    <div class="star-item">
+                        <strong>Situation:</strong>
+                        <p>The online interview took place urgently, and I was eager to gain real-world experience. This was my first professional interview conducted entirely online, which made me slightly nervous about how I would come across to the panel. The challenge was balancing professionalism with authenticity in a virtual setting where body language and tone carried extra weight.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Task:</strong>
+                        <p>My task was to present myself as confident, prepared, and capable of handling both technical and interpersonal aspects of the internship. I needed to demonstrate not only my academic knowledge but also my communication skills and ability to work effectively in a hybrid team environment.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Action:</strong>
+                        <p>To prepare, I conducted a thorough study of Masebo Networks' operations and projects. I practiced answering typical interview questions using the STAR technique to provide structured and relevant responses. I tested my internet connection, lighting, and background setup before the interview to ensure a professional virtual appearance. During the interview, I maintained eye contact with the camera, spoke clearly, and provided real examples of how I solved challenges in my coursework.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Result:</strong>
+                        <p>My preparation paid off — I performed confidently, answered questions effectively, and impressed the interviewers with my composure and readiness. A few days later, I received the internship offer. This experience taught me the value of preparation, calmness under pressure, and the importance of communicating both competence and enthusiasm in an interview setting.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MOCK INTERVIEW -->
+            <section id="mock-interview">
+                <h2>🎥 Mock Interview</h2>
+                
+                <div class="subsection">
+                    <h3>Evidence</h3>
+                    <p>As part of my university's work readiness program, I participated in an online mock interview designed to simulate a real-world job interview. The session helped me understand how to apply the STAR method in practice and how to handle interview nerves. The feedback from the interviewer helped me refine my responses and body language.</p>
+                    
+                    <div class="image-placeholder">
+                        <img src="<img width="1906" height="693" alt="mock-interview jpg" src="https://github.com/user-attachments/assets/e9ee377f-8c41-433d-8b87-21c46cbd12d9" />
+" alt="Mock Interview Evidence">
+                        <span>🎬 Replace with: Mock interview screenshot or feedback form</span>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Reflection: STAR Technique</h3>
+                    
+                    <div class="star-item">
+                        <strong>Situation:</strong>
+                        <p>During my final year, our faculty organized an online mock interview session for students to prepare us for professional interviews. I viewed it as an opportunity to assess my readiness for real job interviews and to identify areas that required improvement. I was aware that my responses often tended to be too long or lacked focus.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Task:</strong>
+                        <p>My task was to participate in the mock interview as if it were a real one and to demonstrate my ability to respond confidently and concisely to questions about teamwork, leadership, and communication. I also wanted to learn how to better structure my answers using the STAR framework to ensure that they were organized and impactful.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Action:</strong>
+                        <p>I prepared by reviewing common behavioral interview questions and writing down examples from my academic projects that demonstrated my skills. During the session, I maintained professionalism and used clear examples to explain my experiences. I also paid attention to my posture and tone to convey confidence. After the interview, I carefully reviewed the feedback provided and made notes on areas that I needed to work on, particularly shortening my answers.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Result:</strong>
+                        <p>The mock interview was an eye-opening experience that built my confidence and improved my communication clarity. I learned how to stay focused under pressure and structure my answers logically. This preparation directly contributed to my success in my actual Masebo Networks interview, where I was able to perform with greater assurance and control.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROFESSIONAL NETWORKING -->
+            <section id="networking">
+                <h2>🌐 Professional Networking</h2>
+                
+                <div class="subsection">
+                    <h3>Evidence</h3>
+                    <p>While interning at Masebo Networks, I made it a priority to connect with professionals from different departments to expand my industry knowledge. I also created and updated my LinkedIn profile to reflect my internship activities and connected with mentors, supervisors, and fellow interns to build my professional presence online.</p>
+                    
+                    <div class="image-placeholder">
+                        <img src="<img width="1905" height="963" alt="networking jpg" src="https://github.com/user-attachments/assets/205bbc06-b40f-4022-87c3-ced983f8e945" />
+" alt="Professional Networking Evidence">
+                        <span>🔗 Replace with: LinkedIn profile, networking event photo, or connections</span>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Reflection: STAR Technique</h3>
+                    
+                    <div class="star-item">
+                        <strong>Situation:</strong>
+                        <p>At the beginning of my internship, I realized that professional networking would be essential for learning from experienced colleagues and staying informed about opportunities in the ICT field. Since I was working in a hybrid setup, I didn't always have face-to-face interactions, which made networking more challenging.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Task:</strong>
+                        <p>My goal was to build strong professional relationships both within Masebo Networks and in the broader ICT community. I aimed to connect with people who could provide guidance, share experiences, and help me grow as a professional.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Action:</strong>
+                        <p>I began by engaging actively during team meetings, asking insightful questions, and offering assistance on tasks where I could contribute. I will also send personalized LinkedIn connection requests to colleagues, thanking them for their guidance and staying in touch about industry trends.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Result:</strong>
+                        <p>By the end of my internship, I will have built meaningful professional relationships and gained several mentors who continued to guide me even after the program ended. My LinkedIn network will grow, and I will feel more confident engaging in professional conversations. This experience will help me understand that networking is not about seeking favors but about building lasting, mutual connections that support personal and career growth.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WORKPLACE ETIQUETTE -->
+            <section id="etiquette">
+                <h2>🧠 Workplace Etiquette</h2>
+                
+                <div class="subsection">
+                    <h3>Evidence</h3>
+                    <p>During my hybrid internship, maintaining professionalism was a key part of my daily routine. Whether working from home or at the office, I made sure to be punctual, respectful, and accountable for my work. I also ensured that I followed company protocols, met deadlines, and maintained effective communication with my supervisor and team members.</p>
+                    
+                    <div class="image-placeholder">
+                        <img src="<img width="1908" height="971" alt="workplace-etiquette jpg" src="https://github.com/user-attachments/assets/66453e51-a40e-4381-87bf-c2520abcfd92" />
+" alt="Workplace Etiquette Evidence">
+                        <span>⏰ Replace with: Professional workspace, calendar, or etiquette example</span>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Reflection: STAR Technique</h3>
+                    
+                    <div class="star-item">
+                        <strong>Situation:</strong>
+                        <p>When I started my internship at Masebo Networks, adapting to a hybrid work environment was new to me. Some days required in-person collaboration, while others involved working remotely with minimal supervision. I quickly noticed that balancing flexibility with discipline was essential to maintain productivity.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Task:</strong>
+                        <p>My main task was to uphold professional behavior, regardless of whether I was working online or in the office. This included being punctual for meetings, responding promptly to messages, completing my assigned tasks, and demonstrating accountability in everything I did.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Action:</strong>
+                        <p>To achieve this, I established a personal routine that allowed me to manage my time effectively. I created a daily task tracker to monitor progress and set reminders for meetings and deadlines. When working remotely, I maintained a distraction-free workspace and communicated regularly with my supervisor to provide updates. I also made sure to present myself professionally during online meetings by dressing appropriately and maintaining a positive attitude.</p>
+                    </div>
+
+                    <div class="star-item">
+                        <strong>Result:</strong>
+                        <p>By following these practices, I consistently met deadlines and earned positive feedback from my supervisor. I became more disciplined, reliable, and self-aware. This experience taught me that workplace etiquette is not just about following rules — it's about demonstrating respect, commitment, and integrity in every aspect of one's work.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONCLUSION -->
+            <section id="conclusion" class="conclusion-section">
+                <h2>🧾 Conclusion</h2>
+                <p>Creating this digital portfolio helped me reflect deeply on my journey as a hybrid intern at Masebo Networks. Through experiences in communication, interviews, networking, and professionalism, I gained valuable insights into what it means to be work-ready in the ICT industry. Each situation challenged me to grow, each task demanded responsibility, each action required intention, and each result shaped me into a more confident and capable professional.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 ESETHU ELSIE MBIZWENI | CPUT Digital Portfolio</p>
+            <p>PRP370S - Project Presentation 3</p>
+            <p>Masebo Networks Hybrid Internship</p>
+        </footer>
+    </div>
+</body>
+</html>
